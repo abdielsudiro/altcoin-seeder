@@ -339,7 +339,7 @@ extern "C" void* ThreadStats(void*) {
   } while(1);
 }
 
-static const string mainnet_seeds[] = {"west01.xcnode.xc-official.com", "east01.xcnode.xc-official.com", ""};
+static const string mainnet_seeds[] = {"west01.xcnode.xc-official.com", "west02.xcnode.xc-official.com", "east01.xcnode.xc-official.com", ""};
 static const string testnet_seeds[] = {""};
 static const string *seeds = mainnet_seeds;
 
