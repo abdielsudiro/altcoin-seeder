@@ -34,7 +34,7 @@ to for example vps.example.com:
 
 ``` $ dig -t NS dnsseed.example.com ```
 
-``` ;; ANSWER SECTION ```
+``` ;; ANSWER SECTION ``` <br>
 ``` dnsseed.example.com.   86400    IN      NS     vps.example.com. ```
 
 On the system vps.example.com, you can now run dnsseed:
