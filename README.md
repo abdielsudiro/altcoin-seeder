@@ -68,7 +68,7 @@ e-mailadres (with the @ part replaced by .) using -m.
 Typically, you'll need root privileges to listen to port 53 (name service).
 
 One solution to this is the use of setcap. Install it with your package management system and then use: <br>
-``` $ setcap cap_net_bind_service=+eip /path/to/dnsseed. This will allow the program to bind to port 53. ```
+``` $ setcap cap_net_bind_service=+eip /path/to/dnsseed. ``` <br> This will allow the program to bind to port 53.
 
 Another solution is using an iptables rule (Linux only) to redirect it to
 a non-privileged port: <br>
