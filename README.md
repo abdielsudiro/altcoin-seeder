@@ -21,7 +21,7 @@ your distribution, but Debian likes have a package called 'libboost-all-dev'
 which should give you all the requirements. When your development environment
 is set up you can simple compile with 'make'.
 If you compile on a Qemu KVM VPS, you may need to edit the first line
-of the Makefile, if you get an error about architecture, from:
+of the Makefile, if you get an error about architecture, from: <br>
 ``` CXXFLAGS = -O3 -g0 -march=native ```
 to:
 ``` CXXFLAGS = -O3 -g0 -mtune-generic ```
@@ -67,11 +67,11 @@ e-mailadres (with the @ part replaced by .) using -m.
 
 Typically, you'll need root privileges to listen to port 53 (name service).
 
-One solution to this is the use of setcap. Install it with your package management system and then use:
+One solution to this is the use of setcap. Install it with your package management system and then use: <br>
 ``` $ setcap cap_net_bind_service=+eip /path/to/dnsseed. This will allow the program to bind to port 53. ```
 
 Another solution is using an iptables rule (Linux only) to redirect it to
-a non-privileged port:
+a non-privileged port: <br>
 
 ``` $ iptables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-port 5353 ```
 
