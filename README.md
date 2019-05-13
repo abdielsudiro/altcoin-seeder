@@ -1,5 +1,4 @@
 ## cypherfunk-seeder
-## ===============
 
 Dogecoin-seeder is a crawler for the Dogecoin network, which exposes a list
 of reliable nodes via a built-in DNS server.
@@ -15,8 +14,8 @@ Features:
 * very low memory (a few tens of megabytes) and cpu requirements.
 * crawlers run in parallel (by default 96 threads simultaneously).
 
-COMPILATION
------------
+## COMPILATION
+
 You nned to have the Boost dev libraries installed. It depends on
 your distribution, but Debian likes have a package called 'libboost-all-dev'
 which should give you all the requirements. When your development environment
@@ -27,8 +26,7 @@ CXXFLAGS = -O3 -g0 -march=native
 to:
 CXXFLAGS = -O3 -g0 -mtune-generic
 
-USAGE
------
+## USAGE
 
 Assuming you want to run a dns seed on dnsseed.example.com, you will
 need an authorative NS record in example.com's domain record, pointing
@@ -65,8 +63,7 @@ for DNS settings to propagate over the internet.
 If you want the DNS server to report SOA records, please provide an
 e-mailadres (with the @ part replaced by .) using -m.
 
-RUNNING AS NON-ROOT
--------------------
+## RUNNING AS NON-ROOT
 
 Typically, you'll need root privileges to listen to port 53 (name service).
 
