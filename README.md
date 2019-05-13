@@ -22,9 +22,9 @@ which should give you all the requirements. When your development environment
 is set up you can simple compile with 'make'.
 If you compile on a Qemu KVM VPS, you may need to edit the first line
 of the Makefile, if you get an error about architecture, from:
-CXXFLAGS = -O3 -g0 -march=native
+``` CXXFLAGS = -O3 -g0 -march=native ```
 to:
-CXXFLAGS = -O3 -g0 -mtune-generic
+``` CXXFLAGS = -O3 -g0 -mtune-generic ```
 
 ## USAGE
 
@@ -32,14 +32,14 @@ Assuming you want to run a dns seed on dnsseed.example.com, you will
 need an authorative NS record in example.com's domain record, pointing
 to for example vps.example.com:
 
-$ dig -t NS dnsseed.example.com
+``` $ dig -t NS dnsseed.example.com ```
 
-;; ANSWER SECTION
-dnsseed.example.com.   86400    IN      NS     vps.example.com.
+``` ;; ANSWER SECTION ```
+``` dnsseed.example.com.   86400    IN      NS     vps.example.com. ```
 
 On the system vps.example.com, you can now run dnsseed:
 
-./dnsseed -h dnsseed.example.com -n vps.example.com
+``` ./dnsseed -h dnsseed.example.com -n vps.example.com ```
 
 That means your domain needs to be able to have arbitrary NS entries
 for subdomains. Alternatively, if you want to use the apex domain as seed address,
@@ -68,12 +68,12 @@ e-mailadres (with the @ part replaced by .) using -m.
 Typically, you'll need root privileges to listen to port 53 (name service).
 
 One solution to this is the use of setcap. Install it with your package management system and then use:
-$ setcap cap_net_bind_service=+eip /path/to/dnsseed. This will allow the program to bind to port 53.
+``` $ setcap cap_net_bind_service=+eip /path/to/dnsseed. This will allow the program to bind to port 53. ```
 
 Another solution is using an iptables rule (Linux only) to redirect it to
 a non-privileged port:
 
-$ iptables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-port 5353
+``` $ iptables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-port 5353 ```
 
 If properly configured, this will allow you to run dnsseed in userspace, using
 the -p 5353 option.
